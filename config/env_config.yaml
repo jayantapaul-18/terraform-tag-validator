@@ -1,0 +1,13 @@
+environments:
+  PROD:
+    Environment:
+      allowed_values: ["Production::PROD"]
+      suggestion: "Production environment"
+      
+  LOWER:
+    Environment:
+      allowed_values: ["Non-production::DEV", "Non-production::QAT"]
+      suggestion: "Non-production environment"
+
+# Explicit default declaration
+default_environment: LOWER

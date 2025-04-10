@@ -92,13 +92,13 @@ python3 terraform_tag_validator.py plan.json
 
 ### 🚫 Tag Compliance Violations Detected
 
-Resource: aws_s3_bucket.ai_lab_bucket
-Missing mandatory tags: - DataRetention (Data retention policy) - Sensitivity (Data sensitivity level)
+- Resource: aws_s3_bucket.ai_lab_bucket
+- Missing mandatory tags: - DataRetention (Data retention policy) - Sensitivity (Data sensitivity level)
 
-REPORT: Violation Summary:
-Total resources with issues: 1
-Missing tags count: 2
-Invalid values count: 0
+- REPORT: Violation Summary:
+- Total resources with issues: 1
+- Missing tags count: 2
+- Invalid values count: 0
 =====================================
 
 ### Configuration Validation

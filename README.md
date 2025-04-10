@@ -1,16 +1,19 @@
-## Terraform AWS Tag Validator
+### Terraform AWS Tag Validator
 
 This implementation provides a maintainable, enterprise-ready solution for Terraform tag validation that can evolve with changing requirements.
 
-## Code Structure
+### Code Structure
 
+```bash
 terraform-tag-validator/
 ├── config/
 │ ├── tag_rules.yaml # Tag validation rules
 │ └── env_config.yaml # Environment-specific settings
 └── terraform_tag_validator.py # Main validation script
+└── aws_tagging_validator.py # Advance tagging validation script
+```
 
-## Usage / Test Command:
+### Usage / Test Command:
 
 ```bash
 pip install pyyaml
@@ -31,7 +34,7 @@ python3 terraform_tag_validator.py plan.json --config ./custom_config
 python3 terraform_tag_validator.py plan.json --json
 ```
 
-## Terraform Plan Summarizer
+### Terraform Plan Summarizer
 
 ```bash
 python3 tf_plan_summarizer.py
@@ -53,7 +56,7 @@ python3 tf_plan_summarizer.py
 - aws_s3_bucket_ownership_controls.ai_lab_bucket
 - aws_s3_bucket_versioning.versioning
 
-## Debug Logging Control
+### Debug Logging Control
 
 ```bash
 # Enable Debug logging via command line
@@ -64,7 +67,7 @@ export TAG_DEBUG_LOG=1
 python3 terraform_tag_validator.py plan.json
 ```
 
-## Color Control
+### Color Control
 
 ```bash
 # Enable colors
@@ -78,7 +81,7 @@ export TAG_COLOR_LOGS=0
 python3 terraform_tag_validator.py plan.json
 ```
 
-## Output Formats:
+### Output Formats:
 
 - Console Output:
 - `Success Case`:
@@ -87,7 +90,7 @@ python3 terraform_tag_validator.py plan.json
 
 - `Failure Case`:
 
-# 🚫 Tag Compliance Violations Detected
+### 🚫 Tag Compliance Violations Detected
 
 Resource: aws_s3_bucket.ai_lab_bucket
 Missing mandatory tags: - DataRetention (Data retention policy) - Sensitivity (Data sensitivity level)
@@ -98,7 +101,7 @@ Missing tags count: 2
 Invalid values count: 0
 =====================================
 
-## Configuration Validation
+### Configuration Validation
 
 - Ensure mandatory rules have non-empty allowed_values
 
@@ -106,9 +109,9 @@ Invalid values count: 0
 
 - Ensure Environment and Application tags are required globally
 
-## Key Feature:
+### Key Feature:
 
-## Reporting
+### Reporting
 
 \*Color-coded output
 
@@ -158,13 +161,13 @@ Counts of different violation types\*
 
 - Easy to modify without code changes\*\*
 
-# Strong Typing:
+### Strong Typing:
 
 - Uses Python dataclasses for type-safe configuration
 
 - TagRule and EnvironmentConfig classes
 
-# Robust Validation:
+### Robust Validation:
 
 - Config validation during loading
 
@@ -172,7 +175,7 @@ Counts of different violation types\*
 
 - Fallback to default environment
 
-# Modular Architecture:
+### Modular Architecture:
 
 - Separate classes for configuration and validation
 
@@ -180,7 +183,7 @@ Counts of different violation types\*
 
 - Easier to extend with new features
 
-# Improved Environment Handling:
+### Improved Environment Handling:
 
 - Environment-specific tag rules
 
@@ -188,7 +191,7 @@ Counts of different violation types\*
 
 - Clear configuration structure
 
-## Verify Tag Rules Configuration Files
+### Verify Tag Rules Configuration Files
 
 - File: `config/tag_rules.yaml`
 
@@ -252,7 +255,7 @@ excluded_resources:
   - aws_s3_bucket_acl
 ```
 
-## Verify Environment Configuration Files
+### Verify Environment Configuration Files
 
 - File: `config/env_config.yaml`
 
@@ -275,6 +278,6 @@ environments:
         ]
       suggestion: "Non-production environment"
 
-# Explicit default declaration
+### Explicit default declaration
 default_environment: LOWER
 ```
